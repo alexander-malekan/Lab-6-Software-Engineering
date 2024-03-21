@@ -15,8 +15,18 @@ def encode(password):
     return res
 
 
-def decode(_password):
-    pass
+def decode(password):
+    decoded_password = ""  # stores the decoded pw
+
+
+    for digit in password:
+        # Convert the digit to a number, subtract 3, handle negative numbers, and ensure it's a single digit
+        decoded_digit = (int(digit) - 3 + 10) % 10
+        # Add the decoded digit to the decoded password
+        decoded_password += str(decoded_digit)
+
+    return decoded_password
+
 
 
 def main():
