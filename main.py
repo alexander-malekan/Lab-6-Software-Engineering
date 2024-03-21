@@ -9,8 +9,9 @@ def displayMenu():
 
 def encode(password):
     res = ''
-    for letter in password:
-        res += str(int(letter)+3)
+    for digit in password:
+        encoded_digit = (int(digit) + 3) % 10
+        res += str(encoded_digit)
     print('Your password has been encoded and stored!')
     return res
 
